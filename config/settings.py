@@ -1,6 +1,7 @@
 import os
 from datetime import timedelta
 from pathlib import Path
+import urllib
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -33,7 +34,6 @@ INSTALLED_APPS = [
     'corsheaders',
     # Local apps
     "users",
-    "posts",
 ]
 CORS_ORIGIN_ALLOW_ALL = True
 CORS_ALLOW_ALL_ORIGINS = True
@@ -75,12 +75,11 @@ WSGI_APPLICATION = "config.wsgi.application"
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'python',
-        'USER': 'root',
-        'PASSWORD':'',
-        'HOST':'localhost',
-        'PORT':'3306',
+        'ENGINE': 'djongo',
+        'NAME': 'chat_db',
+        'USER': 'jacob143590',
+        'PASSWORD':'VYjbcw7San9hrhyd',
+        'HOST':'mongodb+srv://jacob143590'+urllib.parse.quote_plus('VYjbcw7San9hrhyd')+'@creative.9iq2cmp.mongodb.net/?retryWrites=true&w=majority',
     }
 }
 
